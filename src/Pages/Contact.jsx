@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Blank() {
+export default function Contact() {
   return (
     <div>
-        blank
-      
+      Contact.js
+
     </div>
   )
 }

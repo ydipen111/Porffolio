@@ -6,8 +6,11 @@ import {
   Button,
   IconButton,
   Card,
+  Avatar,
 } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
+import myPhoto from './../Photo/myPhoto.jpg';
+// import { Avatar } from "@material-tailwind/react";
 
 export default function Header() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -20,7 +23,7 @@ export default function Header() {
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-12 ">
       <Typography
         as="li"
         variant="small"
@@ -28,7 +31,7 @@ export default function Header() {
         className="p-1 font-normal"
       >
 
-        <NavLink to="recepie">Recepie</NavLink>
+        <NavLink to="/home-page"> <h1 className="text-sm font-bold hover:text-customPurple duration-500">HOME</h1></NavLink>
       </Typography>
       <Typography
         as="li"
@@ -37,7 +40,7 @@ export default function Header() {
         className="p-1 font-normal"
       >
 
-        <NavLink to="food">Food</NavLink>
+        <NavLink to="/about-page"> <h1 className="text-sm font-bold hover:text-customPurple duration-500">ABOUT</h1></NavLink>
       </Typography>
       <Typography
         as="li"
@@ -46,7 +49,7 @@ export default function Header() {
         className="p-1 font-normal"
       >
 
-        <NavLink to="services">Services</NavLink>
+        <NavLink to="project-page"><h1 className="text-sm font-bold hover:text-customPurple duration-500">PROJECTS</h1></NavLink>
       </Typography>
       <Typography
         as="li"
@@ -55,13 +58,13 @@ export default function Header() {
         className="p-1 font-normal"
       >
 
-        <NavLink to="kitchen">Kitchen</NavLink>
+        <NavLink to="contact-page"> <h1 className="text-sm font-bold hover:text-customPurple">CONTACT</h1></NavLink>
       </Typography>
     </ul>
   );
 
   return (
-    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll px-4 py-4">
+    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll px-9 py-4">
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
@@ -69,7 +72,20 @@ export default function Header() {
             href="#"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
-            <NavLink to="home">Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "text-customPurple" : ""
+            } to="/home-page">
+              <div className="text-lg font-bold flex flex-justify-center items-center space-x-2">
+                <Avatar
+                  size="lg"
+                  alt="avatar"
+                  src={myPhoto}
+                  className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30
+                  object-contain"
+                />
+
+                <h1 className="text-center items-center hover:text-customPurple duration-500 text-lg">DIPENDRA YESMALI MAGAR</h1>
+              </div>
+            </NavLink>
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
@@ -79,19 +95,19 @@ export default function Header() {
                 size="sm"
                 className="hidden lg:inline-block"
               >
-                <span>Log In</span>
+                <span className="hover:text-customPurple text-sm font-bold duration-500">Log In</span>
               </Button>
               <Button
                 variant="gradient"
                 size="sm"
-                className="hidden lg:inline-block"
+                className="hidden lg:inline-block "
               >
-                <span>Sign in</span>
+                <span className="hover:text-customPurple duration-500 text-sm font-bold duration-500">Sign in</span>
               </Button>
             </div>
             <IconButton
               variant="text"
-              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden "
               ripple={false}
               onClick={() => setOpenNav(!openNav)}
             >
@@ -132,18 +148,15 @@ export default function Header() {
           {navList}
           <div className="flex items-center gap-x-1">
             <Button fullWidth variant="text" size="sm" className="">
-              <span>Log In</span>
+              <span className="text-lg font-bold">Log In</span>
             </Button>
             <Button fullWidth variant="gradient" size="sm" className="">
-              <span>Sign in</span>
+              <span className="text-sm ">Sign in</span>
             </Button>
           </div>
         </MobileNav>
-      </Navbar>
-      <div className="mx-auto max-w-screen-md py-12">
+      </Navbar >
 
-
-      </div>
-    </div>
+    </div >
   );
 }

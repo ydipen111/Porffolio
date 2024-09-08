@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom'
 
 export default function Rootlayout() {
   return (
-    <div>
-        <Header/>
-        <Outlet/>
-      
+    <div className=''>
+      <Header />
+      <Outlet />
+
     </div>
   )
 }

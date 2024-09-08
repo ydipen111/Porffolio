@@ -4,7 +4,9 @@ import { Product } from './Components/Product'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Rootlayout from './Rootlayout'
 import Home from './Pages/Home'
-import Blank from './Pages/Blank'
+import Project from './Pages/Project'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
 
 export default function App() {
   useState()
@@ -16,18 +18,22 @@ export default function App() {
       element: <Home />
     },
     {
-      path:'home',
-      element:<Home/>
+      path: 'home-page',
+      element: <Home />
     },
     {
-      path:'recepie',
-      element:<Blank/>
+      path: 'contact-page',
+      element: <Contact />
     },
     {
-      path:'services',
-      element:<Blank/>
-    }
+      path: 'about-page',
+      element: <About />
+    },
+    {
+      path: 'project-page',
+      element: <Project />
+    },
     ]
   }])
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />
 }
