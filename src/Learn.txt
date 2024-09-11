@@ -1,0 +1,5 @@
+const scroll = useRef()
+
+const Scrolling = () =>{
+  scroll.current.s
+}

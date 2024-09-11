@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Navbar,
   MobileNav,
@@ -9,10 +9,17 @@ import {
 } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom"; // Keep NavLink for routing
 import myPhoto from './../Photo/myPhoto.jpg';
-import { link } from 'react-scroll'
+
 
 export default function Header() {
   const [openNav, setOpenNav] = React.useState(false);
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectRef = useRef(null);
+  const contactRef = useRef(null);
+
+
+
 
   React.useEffect(() => {
     window.addEventListener(
@@ -31,22 +38,23 @@ export default function Header() {
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-12 ">
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <NavLink to="/home-page" onClick={() => handleScrollTo('home-page')}>
+        <NavLink to="/home-page"
+          onClick={() => handelScroll(homeRef)}>
           <h1 className="text-sm font-bold hover:text-customPurple duration-500">HOME</h1>
         </NavLink>
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <NavLink to="/about-page" onClick={() => handleScrollTo('about-page')}>
+        <NavLink to="/about-page" onClick={() => handelScroll(aboutRef)}>
           <h1 className="text-sm font-bold hover:text-customPurple duration-500">ABOUT</h1>
         </NavLink>
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <NavLink to="/project-page" onClick={() => handleScrollTo('project-page')}>
+        <NavLink to="/project-page" onClick={() => handelScroll(projectRef)}>
           <h1 className="text-sm font-bold hover:text-customPurple duration-500">PROJECTS</h1>
         </NavLink>
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <NavLink to="/contact-page" onClick={() => handleScrollTo('contact-page')}>
+        <NavLink to="/contact-page" onClick={() => handelScroll(contactRef)}>
           <h1 className="text-sm font-bold hover:text-customPurple">CONTACT</h1>
         </NavLink>
       </Typography>

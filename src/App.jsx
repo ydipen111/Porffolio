@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import Project from './Pages/Project'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
+import OnePage from './OnePage'
 
 export default function App() {
   useState()
@@ -15,7 +16,7 @@ export default function App() {
     element: <Rootlayout />,
     children: [{
       index: true,
-      element: <Home />
+      element: <OnePage />
     },
     {
       path: 'home-page',
