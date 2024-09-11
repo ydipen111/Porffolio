@@ -9,6 +9,7 @@ module.exports = withMT({
       colors: {
         "customPurple": '#7843E9',
         "soft-black": '#F1F1F1',
+        "desktop": "#F6F6F6",
 
       },
 

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className='bg-soft-black flex justify-between px-4 ssm:justify-center 
     
-    md:pr-56 h-screen  '>
+    md:pr-56   '>
       <div className='m:hidden px-3 py-7 flex flex-col justify-center'>
         <ul className='space-y-6 bg-white px-3 py-7 rounded-md  ' >
           <li className='text-4xl'><SocialIcon url='https://www.linkedin.com/in/dipendra-yesmali-magar-50007b262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' /></li>

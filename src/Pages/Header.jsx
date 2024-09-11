@@ -26,6 +26,7 @@ export default function Header() {
     const headerHeight = document.querySelector('nav').offsetHeight; // Get the height of the header
     const topPosition = ref.current.getBoundingClientRect().top + window.scrollY - headerHeight; // Adjust for header height
     window.scrollTo({ top: topPosition, behavior: 'smooth' }); // Smooth scroll to adjusted position
+    setOpenNav(false)
   };
 
   React.useEffect(() => {
@@ -110,16 +111,16 @@ export default function Header() {
 
       {/* Main content area with sections */}
       <div className="flex flex-col">
-        <div ref={homeRef} className="h-screen flex items-center justify-center bg-gray-200">
+        <div ref={homeRef} className="h-screen bg-desktop flex items-center justify-center bg-gray-200 px-10 ">
           <Home />
         </div>
-        <div ref={aboutRef} className="h-screen flex items-center justify-center bg-gray-300">
+        <div ref={aboutRef} className=" flex items-center justify-center bg-desktop ">
           <About />
         </div>
-        <div ref={projectRef} className="h-screen flex items-center justify-center bg-gray-400">
+        <div ref={projectRef} className="flex items-center justify-center bg-desktop">
           <Project />
         </div>
-        <div ref={contactRef} className="h-screen flex items-center justify-center bg-gray-500">
+        <div ref={contactRef} className=" flex items-center justify-center bg-desktop ">
           <Contact />
         </div>
       </div>
