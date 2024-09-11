@@ -3,3 +3,14 @@ const scroll = useRef()
 const Scrolling = () =>{
   scroll.current.s
 }
+
+
+            <NavLink className={({ isActive }) => isActive ? "text-customPurple" : ""} to="/home-page">NavLink
+
+
+            const handleScroll = (ref) => {
+  // Calculate the header height
+  const headerHeight = document.querySelector('nav').offsetHeight; // Get the height of the header
+  const topPosition = ref.current.getBoundingClientRect().top + window.scrollY - headerHeight; // Adjust for header height
+  window.scrollTo({ top: topPosition, behavior: 'smooth' }); // Smooth scroll to adjusted position
+};
