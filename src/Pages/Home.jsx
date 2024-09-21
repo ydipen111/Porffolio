@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Food from './Food'
 import { FaFacebook, FaGithubAlt, } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
@@ -7,6 +7,53 @@ import { NavLink } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons'
 
 export default function Home() {
+
+  const words = ["Hello, I am Dipendra Magar!", "Welcome to my website!", "I am web developer and designer."];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [letterIndex, setLetterIndex] = useState(0);
+
+  useEffect(() => {
+    const handleType = () => {
+      const currentWord = words[currentWordIndex];
+
+      if (isDeleting) {
+        setCurrentText(currentWord.substring(0, letterIndex - 1));
+        setLetterIndex(letterIndex - 1);
+        if (letterIndex === 0) {
+          setIsDeleting(false);
+          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }
+      } else {
+        setCurrentText(currentWord.substring(0, letterIndex + 1));
+        setLetterIndex(letterIndex + 1);
+        if (letterIndex === currentWord.length) {
+          setIsDeleting(true);
+        }
+      }
+    };
+
+    const typingDelay = isDeleting ? 50 : 100; // Adjust typing speed
+    const timeoutId = setTimeout(handleType, typingDelay);
+
+    return () => clearTimeout(timeoutId); // Clean up the timeout
+  }, [currentWordIndex, letterIndex, isDeleting, words]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className='bg-soft-black flex flex-row   md:pr-56 ssm:flex-col ssm:flex-reverse pr-0 mr-0   '>
       {/* social media link */}
@@ -28,7 +75,12 @@ export default function Home() {
 
       {/* Genaral information */}
       <div onClick={() => handleScrol(homeRef)} className='mmd:px-0 ssm:py-3 px-5 py-4 text-center space-y-4 flex flex-col justify-center   '>
-        <h1 className='text-6xl ssm:px-3  tracking-wide mmd:text-3xl sm:px-7 ssm:text-start font-bold '>HEY, I'M DIPENDRA YESMALI </h1>
+
+
+        <h1 className='text-6xl ssm:px-3  tracking-wide mmd:text-3xl sm:px-7 ssm:text-start font-bold'>{currentText}</h1>
+
+
+
         <p className='text-2xl mmd:text-xl ssm:px-3 px-24  font-sans py-7 ssm:py-3 tracking-wide text-start '>A Result-Oriented Web Developer building and managing Websites and Web Applications that leads to the success of the overall product</p>
 
         {/* FOR MOBILE SOCIALMDEDIA LINK */}

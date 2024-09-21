@@ -66,7 +66,7 @@ export default function Header() {
                 size="lg"
                 alt="avatar"
                 src={myPhoto}
-                className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30 object-contain"
+                className="border border-green-500 shadow-xl shadow-customPurple-900/20 ring-4  object-contain"
               />
               <h1 className="text-center items-center hover:text-customPurple duration-500 text-xl ">Dipendra yesmali magar</h1>
             </div>
