@@ -41,6 +41,7 @@ export default function Header() {
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <h1 onClick={() => handleScroll(homeRef)} className="text-sm font-bold hover:text-customPurple duration-500">HOME</h1>
       </Typography>
+
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <h1 onClick={() => handleScroll(aboutRef)} className="text-sm font-bold hover:text-customPurple duration-500">ABOUT</h1>
       </Typography>
@@ -55,7 +56,9 @@ export default function Header() {
 
   return (
     <div className="w-full">
-      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 ">
+
+      {/* Headers */}
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4  ">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography as="a" href="#" className="mr-4 cursor-pointer py-1.5 font-medium">
             <div className="text-lg font-bold flex flex-justify-center items-center space-x-2">
@@ -111,10 +114,13 @@ export default function Header() {
 
       {/* Main content area with sections */}
       <div className="flex flex-col">
-        <div ref={homeRef} className="h-screen bg-desktop flex items-center justify-center bg-gray-200 px-10 ">
+
+        {/* dipendra page */}
+        <div ref={homeRef} className="h-screen bg-desktop flex items-center justify-center ssm:items-start ssm:mx-auto ssm:my-auto bg-gray-200 px-10  ">
           <Home />
         </div>
-        <div ref={aboutRef} className=" flex items-center justify-center bg-desktop ">
+
+        <div ref={aboutRef} className=" flex items-center justify-center bg-desktop ssm:mt-20 ">
           <About />
         </div>
         <div ref={projectRef} className="flex items-center justify-center bg-desktop">
