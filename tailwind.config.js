@@ -49,7 +49,13 @@ module.exports = withMT({
         'llg': { 'max': '1024px' },
         'mmd': { 'max': '768px' },
         'ssm': { 'max': '640px' },
-      }
+      },
+
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
+        serif: ["Roboto Slab", "serif"],
+        body: ["Roboto", "sans-serif"],
+      },
 
     },
 
