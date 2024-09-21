@@ -12,14 +12,21 @@ import Home from "./Home";
 import About from "./About";
 import Project from "./Project";
 import Contact from "./Contact";
+import { NavLink } from "react-router-dom";
+import Login from "./Login";
+import Sign from "./sign";
+import Footer from "./Footer";
 
 export default function Header() {
+
   const [openNav, setOpenNav] = React.useState(false);
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectRef = useRef(null);
   const contactRef = useRef(null);
+  const loginRef = useRef(null);
+  const signRef = useRef(null);
 
   const handleScroll = (ref) => {
     // Calculate the header height
@@ -74,12 +81,19 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1">
-              <Button variant="text" size="sm" className="hidden lg:inline-block">
+
+              <Button
+                onClick={() => handleScroll(loginRef)}
+                variant="text" size="sm" className="hidden lg:inline-block">
                 <span className=" text-sm font-bold duration-500">Log In</span>
               </Button>
-              <Button variant="gradient" size="sm" className="hidden lg:inline-block ">
+
+              <Button
+                onClick={() => handleScroll(signRef)}
+                variant="gradient" size="sm" className="hidden lg:inline-block ">
                 <span className="duration-500 text-sm font-bold">Sign in</span>
               </Button>
+
             </div>
             <IconButton
               variant="text"
@@ -132,6 +146,22 @@ export default function Header() {
         <div ref={contactRef} className=" flex items-center justify-center bg-desktop  bg-gray-200">
           <Contact />
         </div>
+
+        <div ref={loginRef} className=" flex items-center justify-center bg-desktop  bg-gray-200">
+          <Login />
+
+        </div>
+
+        {/* <div ref={signRef}>
+          <Sign />
+        </div> */}
+
+
+        <div ref={signRef} className="flex items-center justify-center bg-desktop  bg-gray-800 text-white py-10">
+          <Footer />
+        </div>
+
+
       </div>
     </div>
   );

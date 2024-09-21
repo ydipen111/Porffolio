@@ -81,7 +81,7 @@ export default function Home() {
 
 
 
-        <p className='text-2xl mmd:text-xl ssm:px-3 px-24  font-sans py-7 ssm:py-3 tracking-wide text-start '>🌟 Passionate Developer | MERN Stack & Mobile App, AI Enthusiast 🌟
+        <p className='text-2xl mmd:text-xl ssm:px-3 px-24  font-sans py-7 ssm:py-3 tracking-wide text-start '>🌟 Passionate Developer | MERN Stack , Mobile App & AI Enthusiast 🌟
           Crafting innovative web and mobile applications that deliver exceptional user experiences. Let's build something amazing together</p>
 
         {/* FOR MOBILE SOCIALMDEDIA LINK */}

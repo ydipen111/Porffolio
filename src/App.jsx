@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import Project from './Pages/Project'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
+import Login from './Pages/Login'
 
 export default function App() {
   useState()
@@ -31,6 +32,10 @@ export default function App() {
         path: 'project-page',
         element: <Project />
       },
+      {
+        path: 'login-page',
+        element: <Login />
+      }
     ]
   }])
   return <RouterProvider router={router} />
