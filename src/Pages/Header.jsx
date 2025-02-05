@@ -14,7 +14,6 @@ import Project from "./Project";
 import Contact from "./Contact";
 import { NavLink } from "react-router-dom";
 import Login from "./Login";
-import Sign from "./sign";
 import Footer from "./Footer";
 
 export default function Header() {
