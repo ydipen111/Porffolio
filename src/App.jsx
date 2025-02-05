@@ -8,6 +8,7 @@ import Project from './Pages/Project'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Login from './Pages/Login'
+import ProjectPlace from './Pages/ProjectPlace'
 
 export default function App() {
   useState()
@@ -35,6 +36,10 @@ export default function App() {
       {
         path: 'login-page',
         element: <Login />
+      },
+      {
+        path: 'projectx',
+        element: <ProjectPlace />
       }
     ]
   }])
